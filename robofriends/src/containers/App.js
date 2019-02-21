@@ -22,10 +22,11 @@ class App extends Component {
       isPending,
       error
     } = this.props;
+
     const filteredRobots = robots.filter(robots => {
       return robots.name.toLowerCase().includes(searchField.toLowerCase());
     });
-    if (filteredRobots.length > 0) {
+    if (!isPending && filteredRobots.length > 0) {
       return (
         <div className="tc">
           <h1 className="f2">RoboFriends</h1>
@@ -40,7 +41,7 @@ class App extends Component {
     } else {
       return (
         <div className="tc">
-          <h1 className="f2">Loading</h1>
+          <h1 className="f2">{error}</h1>
         </div>
       );
     }
