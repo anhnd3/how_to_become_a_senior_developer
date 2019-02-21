@@ -3,6 +3,9 @@ import Card from "./Card";
 
 export default class CardList extends Component {
   render() {
+    // if (true) {
+    //   throw new Error("Nooooo!");
+    // }
     const { robots } = this.props;
     const cardComponent = robots.map((robot, i) => {
       return (
